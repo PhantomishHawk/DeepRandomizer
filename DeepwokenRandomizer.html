@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Deepwoken Build Randomizer</title>
+
+  </head>
+  <body>
+    <header>
+    <h1><b>Randomize Your Attunement</b></h1>
+  </header>
+
+  <section>
+
+    <label>Attunements</label><br>
+    <button onclick="RandomizeX()">Randomize</button>
+
+    <p>Your Attunement Is:</p>
+    <p id="randomAttunement"></p>
+    <p id="currentNumber"></p>
+
+    <script>
+    const MyAttunementList = ["Galebreathe, Flamecharm", "Shadowcast", "Frostdraw", "Thundercall","Attunementless"]
+
+    RandomizeX()
+
+    function RandomizeX() {
+
+    var global = Math.random() * 60;
+
+    if (global<10, global>0) {
+       y = "Galebreathe"
+    }
+    if (global<20, global>10) {
+      y = "Flamecharm"
+    }
+    if (global<30, global>20) {
+      y = "Thundercall"
+    }
+    if (global<40, global>30) {
+      y = "Frostdraw"
+    }
+    if (global<50, global>40) {
+      y = "Shadowcast"
+    }
+    if (global<60, global>50) {
+      y = "Attunementless"
+    }
+    document.getElementById("randomAttunement").innerHTML = y;
+}
+  </script>
+
+
+
+
+
+  </section>
+
+<section>
+  <header>
+  <h1><b>Randomize Your Weapon Type</b></h1>
+</header>
+
+<section>
+
+  <label>Weapon Types</label><br>
+  <button onclick="RandomizeFunction2()">Randomize</button>
+
+  <p>Your Weapon type Is:</p>
+  <p id="randomWeapon"></p>
+
+  <script>
+  const myWeaponList = ["Dagger", "Rapier", "Fists", "Guns", "Greatsword", "Greataxe", "Greathammer", "Sword", "Club", "Spear"];
+
+  RandomizeFunction2()
+
+  function RandomizeFunction2() {
+    document.getElementById("randomWeapon").innerHTML = myWeaponList[Math.floor(Math.random() * myWeaponList.length)]
+  }
+  </script>
+</section>
+
+</section>
+  </body>
+
+</html>
