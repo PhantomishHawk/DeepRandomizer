@@ -10,48 +10,170 @@
 
   </head>
   <body>
-    <header>
-    <h1><b>Randomize Your Attunement</b></h1>
-  </header>
 
-  <section>
+    <section>
+      <header>
+      <h1><b>Randomize Your Weapon Type And Attunement</b></h1>
+    </header>
 
-    <label>Attunements</label><br>
-    <button onclick="RandomizeX()">Randomize</button>
+    <section>
 
-    <p>Your Attunement Is:</p>
-    <p id="randomAttunement"></p>
-    <p id="currentNumber"></p>
+      <button onclick="RandomizeFunction1()">Randomize</button><br>
 
-    <script>
-    const MyAttunementList = ["Galebreathe, Flamecharm", "Shadowcast", "Frostdraw", "Thundercall","Attunementless"]
+      <label>Weapon Types</label><br>
 
-    RandomizeX()
+      <p>Your Weapon type Is:</p>
+      <b><p id="randomWeapon"></p></b>
 
-    function RandomizeX() {
 
-    var global = Math.random() * 60;
+        <section>
 
-    if (global<10, global>0) {
-       y = "Galebreathe"
-    }
+          <label>Attunements</label><br>
+
+          <p>Your Attunement Is:</p>
+        <b><p id="randomAttunement"></p></b>
+
+
+          <label>Attribute Points</label>
+          <p>Strength</p>
+          <b><p id="randomStrength"></p></b>
+          <p>Fortitude</p>
+          <b><p id="randomFortitude"></p></b>
+          <p>Agility</p>
+          <b><p id="randomAgility"></p></b>
+          <p>Willpower</p>
+          <b><p id="randomWillpower"></p></b>
+          <p>Leftovers</p>
+          <b><p id="randomLeftover"></p></b>
+
+
+      <script>
+      const myWeaponList = ["Dagger", "Rapier", "Fists", "Guns", "Greatsword", "Greataxe", "Greathammer", "Sword", "Club", "Spear"];
+
+      RandomizeFunction1()
+
+      function RandomizeFunction1() {
+        document.getElementById("randomWeapon").innerHTML = myWeaponList[Math.floor(Math.random() * myWeaponList.length)]
+        var global = Math.random() * 60;
+
+        if (global<10, global>0) {
+           y = "Galebreathe"
+        }
+        if (global<20, global>10) {
+          y = "Flamecharm"
+        }
+        if (global<30, global>20) {
+          y = "Thundercall"
+        }
+        if (global<40, global>30) {
+          y = "Frostdraw"
+        }
+        if (global<50, global>40) {
+          y = "Shadowcast"
+        }
+        if (global<60, global>50) {
+          y = "Attunementless"
+        }
+        document.getElementById("randomAttunement").innerHTML = y;
+
+        if (global<10, global>0) {
+           f = 30
+        }
+        if (global<20, global>10) {
+          f = 40
+        }
+        if (global<30, global>20) {
+          f = 25
+        }
+        if (global<40, global>30) {
+          f = 25
+        }
+        if (global<50, global>40) {
+          f = 25
+        }
+        if (global<60, global>50) {
+          f = 60
+        }
+
+      document.getElementById("randomStrength").innerHTML = f;
+
+      if (global<10, global>0) {
+         g = 50        }
+      if (global<20, global>10) {
+        g = 40
+      }
+      if (global<30, global>20) {
+        g = 50
+      }
+      if (global<40, global>30) {
+        g = 50
+      }
+      if (global<50, global>40) {
+        g = 40
+      }
+      if (global<60, global>50) {
+        g = 90
+      }
+
+    document.getElementById("randomFortitude").innerHTML = g;
+
+    if (global<5, global>0) {
+       m = 30
+     }
+     if (global<10, global>5) {
+        m = 25
+      }
     if (global<20, global>10) {
-      y = "Flamecharm"
+      m = 25
     }
     if (global<30, global>20) {
-      y = "Thundercall"
+      m = 30
     }
     if (global<40, global>30) {
-      y = "Frostdraw"
+      m = 25
     }
     if (global<50, global>40) {
-      y = "Shadowcast"
+      m = 0
     }
-    if (global<60, global>50) {
-      y = "Attunementless"
+    if (global<55, global>50) {
+      m = 25
     }
-    document.getElementById("randomAttunement").innerHTML = y;
-}
+    if (global<60, global>55) {
+      m = 65
+    }
+
+  document.getElementById("randomAgility").innerHTML = m;
+
+  if (global<10, global>0) {
+     b = 20        }
+  if (global<20, global>10) {
+    b = 40
+  }
+  if (global<30, global>20) {
+    b = 0
+  }
+  if (global<40, global>30) {
+    b = 0
+  }
+  if (global<50, global>40) {
+    b = 20
+  }
+  if (global<60, global>50) {
+    b = 50;
+  }
+
+document.getElementById("randomWillpower").innerHTML = b;
+var total = 327-b-m-g-f
+document.getElementById("randomLeftover").innerHTML = total
+
+    }
+
+      </script>
+    </section>
+
+    <script>
+
+
   </script>
 
 
@@ -59,32 +181,6 @@
 
 
   </section>
-
-<section>
-  <header>
-  <h1><b>Randomize Your Weapon Type</b></h1>
-</header>
-
-<section>
-
-  <label>Weapon Types</label><br>
-  <button onclick="RandomizeFunction2()">Randomize</button>
-
-  <p>Your Weapon type Is:</p>
-  <p id="randomWeapon"></p>
-
-  <script>
-  const myWeaponList = ["Dagger", "Rapier", "Fists", "Guns", "Greatsword", "Greataxe", "Greathammer", "Sword", "Club", "Spear"];
-
-  RandomizeFunction2()
-
-  function RandomizeFunction2() {
-    document.getElementById("randomWeapon").innerHTML = myWeaponList[Math.floor(Math.random() * myWeaponList.length)]
-  }
-  </script>
-</section>
-
-</section>
   </body>
 
 </html>
