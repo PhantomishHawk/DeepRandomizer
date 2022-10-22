@@ -13,17 +13,18 @@
 
     <section>
       <header>
-      <h1><b>Randomize Your Weapon Type And Attunement</b></h1>
+      <h2 style="margin-right: 5px; text-align: center; line-height: 1.8; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver">Randomize Your Weapon Type And Attunement</h2>
     </header>
 
     <section>
 
-      <button onclick="RandomizeFunction1()">Randomize</button><br>
+
+      <h3 style="margin-right: 5px; text-align: center; line-height: 1; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver"><button onclick="RandomizeFunction1()">Randomize</button><br>
 
       <label>Weapon Types</label><br>
 
       <p>Your Weapon type Is:</p>
-      <b><p id="randomWeapon"></p></b>
+    <b><p id="randomWeapon"></p></b>
 
 
         <section>
@@ -31,21 +32,30 @@
           <label>Attunements</label><br>
 
           <p>Your Attunement Is:</p>
-        <b><p id="randomAttunement"></p></b>
+        <b><p id="randomAttunement"></p></h3></b>
 
 
-          <label>Attribute Points</label>
-          <p>Strength</p>
-          <b><p id="randomStrength"></p></b>
-          <p>Fortitude</p>
-          <b><p id="randomFortitude"></p></b>
-          <p>Agility</p>
-          <b><p id="randomAgility"></p></b>
-          <p>Willpower</p>
-          <b><p id="randomWillpower"></p></b>
-          <p>Leftovers</p>
-          <b><p id="randomLeftover"></p></b>
-
+<p><h2 style="margin-right: 5px; text-align: center; line-height: 1.8; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver">
+<label>Attribute Points</label></p>
+          <p1>Strength:</p1>
+          <p1 id="randomStrength"></p1><br>
+          <p2>Fortitude:</p2>
+          <p2 id="randomFortitude"></p2><br>
+          <p3>Agility:</p3>
+          <p3 id="randomAgility"></p3><br>
+          <p4>Intelligence:</p4>
+          <p4 id="randomIntelligence"></p4><br>
+          <p5>Willpower:</p5>
+          <p5 id="randomWillpower"></p5><br>
+          <p6>Charisma:</p6>
+          <p6 id="randomCharisma"></p6><br>
+          <p7>Attunement:</p7>
+          <p7 id="randomAttunementStat"></p7><br>
+          <p8>Weapon:</p8>
+          <p8 id="randomWeaponStat"></p8><br>
+          <p9>Leftover Points:</p9>
+          <p9 id="randomLeftover"></p9>
+</h2>
 
       <script>
       const myWeaponList = ["Dagger", "Rapier", "Fists", "Guns", "Greatsword", "Greataxe", "Greathammer", "Sword", "Club", "Spear"];
@@ -91,14 +101,21 @@
         if (global<50, global>40) {
           f = 25
         }
-        if (global<60, global>50) {
+        if (global<55, global>50) {
           f = 60
+        }
+        if (global<60, global>55) {
+          f = 90
         }
 
       document.getElementById("randomStrength").innerHTML = f;
 
-      if (global<10, global>0) {
-         g = 50        }
+      if (global<5, global>0) {
+         g = 50
+       }
+       if (global<10, global>5) {
+          g = 40
+        }
       if (global<20, global>10) {
         g = 40
       }
@@ -111,8 +128,11 @@
       if (global<50, global>40) {
         g = 40
       }
-      if (global<60, global>50) {
+      if (global<55, global>50) {
         g = 90
+      }
+      if (global<60, global>55) {
+        g = 60
       }
 
     document.getElementById("randomFortitude").innerHTML = g;
@@ -143,6 +163,47 @@
     }
 
   document.getElementById("randomAgility").innerHTML = m;
+  if (global<5, global>0) {
+     k = 0
+  }
+  if (global<10, global>5) {
+     k = 20
+  }
+  if (global<15, global>10) {
+    k = 0
+  }
+  if (global<20, global>15) {
+    k = 5
+  }
+  if (global<25, global>20) {
+    k = 20
+  }
+  if (global<30, global>25) {
+    k = 15
+  }
+  if (global<33, global>30) {
+    k = 5
+  }
+  if (global<36, global>33) {
+    k = 40
+  }
+  if (global<40, global>36) {
+    k = 20
+  }
+  if (global<50, global>40) {
+    k = 20
+  }
+  if (global<53, global>50) {
+    k = 0;
+  }
+  if (global<56, global>53) {
+    k = 5;
+  }
+  if (global<60, global>56) {
+    k = 80;
+  }
+
+document.getElementById("randomIntelligence").innerHTML = k;
 
   if (global<10, global>0) {
      b = 20        }
@@ -163,22 +224,79 @@
   }
 
 document.getElementById("randomWillpower").innerHTML = b;
-var total = 327-b-m-g-f
+
+  if (global<5, global>0) {
+     j = 25
+  }
+  if (global<10, global>5) {
+     j = 0
+  }
+  if (global<15, global>10) {
+    j = 0
+  }
+  if (global<20, global>15) {
+    j = 25
+  }
+  if (global<30, global>20) {
+    j = 0
+  }
+  if (global<35, global>30) {
+    j = 0
+  }
+  if (global<40, global>35) {
+    j = 25
+  }
+  if (global<45, global>40) {
+    j = 25
+  }
+  if (global<50, global>45) {
+    j = 50
+  }
+  if (global<55, global>50) {
+    j = 25;
+  }
+  if (global<60, global>55) {
+    j = 0;
+  }
+
+document.getElementById("randomCharisma").innerHTML = j;
+
+  if (global<15, global>0) {
+     c = 60
+  }
+  if (global<30, global>15) {
+     c = 80
+  }
+  if (global<45, global>30) {
+    c = 90
+  }
+  if (global<60, global>45) {
+    c = 100
+  }
+
+
+document.getElementById("randomWeaponStat").innerHTML = c;
+
+if (global<30, global>0) {
+   l = 50
+}
+if (global<45, global>30) {
+  l = 60
+}
+if (global<60, global>45) {
+  l = 80
+}
+
+document.getElementById("randomAttunementStat").innerHTML = l;
+
+var total = 327-b-m-g-f-k-j-c-l
+if (total<0) {
+  console.log(nigga);
+}
 document.getElementById("randomLeftover").innerHTML = total
-
-    }
-
+}
       </script>
     </section>
-
-    <script>
-
-
-  </script>
-
-
-
-
 
   </section>
   </body>
