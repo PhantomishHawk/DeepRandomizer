@@ -292,7 +292,7 @@ document.getElementById("randomAttunementStat").innerHTML = l;
 var total = f + g + m + k + b + j + c + l
 
 if (total>327) {
-  var t = Math.round((total-327))
+  var t = Math.round((total-327)/2)
 
   var arr = [f,g,m,k,b,j,c,l];
   var biggest=arr[0];
@@ -305,6 +305,24 @@ if (total>327) {
   }
 
   arr[big_index]-=t;
+  var sec_big_index=0;
+
+  if (big_index!=0){
+    var sec_big = arr[0];
+    sec_big_index=0;
+  } else {
+    var sec_big = arr[1];
+    sec_big_index=1;
+  }
+
+  for (let i = sec_big_index; i < arr.length; i++) {
+    if (arr[i]>sec_big && arr[i]<=biggest)
+    {
+      if (i!=big_index)
+        sec_big_index=i;
+    }
+  }
+  arr[sec_big_index]-=t;
 
 total = 0;
 for (let i = 0; i < arr.length; i++) {
