@@ -53,7 +53,7 @@
           <p7 id="randomAttunementStat"></p7><br>
           <p8>Weapon:</p8>
           <p8 id="randomWeaponStat"></p8><br>
-          <p9>Leftover Points:</p9>
+          <p9>Points Spent:</p9>
           <p9 id="randomLeftover"></p9>
 </h2>
 
@@ -278,21 +278,49 @@ document.getElementById("randomCharisma").innerHTML = j;
 document.getElementById("randomWeaponStat").innerHTML = c;
 
 if (global<30, global>0) {
-   l = 50
+   l = 60
 }
-if (global<45, global>30) {
-  l = 60
-}
-if (global<60, global>45) {
+if (global<50, global>30) {
   l = 80
+}
+if (global<60, global>50) {
+  l = 0
 }
 
 document.getElementById("randomAttunementStat").innerHTML = l;
 
-var total = 327-b-m-g-f-k-j-c-l
-if (total<0) {
-  console.log(nigga);
+var total = f + g + m + k + b + j + c + l
+
+if (total>327) {
+  var t = Math.round((total-327))
+
+  var arr = [f,g,m,k,b,j,c,l];
+  var biggest=arr[0];
+  var big_index=0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]>biggest)
+    {
+      big_index=i;
+    }
+  }
+
+  arr[big_index]-=t;
+
+total = 0;
+for (let i = 0; i < arr.length; i++) {
+  total+=arr[i];
 }
+
+document.getElementById("randomStrength").innerHTML = arr[0];
+document.getElementById("randomFortitude").innerHTML = arr[1];
+document.getElementById("randomAgility").innerHTML = arr[2];
+document.getElementById("randomIntelligence").innerHTML = arr[3];
+document.getElementById("randomWillpower").innerHTML = arr[4];
+document.getElementById("randomCharisma").innerHTML = arr[5];
+document.getElementById("randomWeaponStat").innerHTML = arr[6];
+document.getElementById("randomAttunementStat").innerHTML = arr[7];
+}
+
 document.getElementById("randomLeftover").innerHTML = total
 }
       </script>
