@@ -10,21 +10,19 @@
 
   </head>
   <body>
-
     <section>
       <header>
-      <h2 style="margin-right: 5px; text-align: center; line-height: 1.8; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver">Randomize Your Weapon Type And Attunement</h2>
+      <div style="text-align: center; position: absolute; top: 1%; left: 1%; right: 85%;">Randomize Everything</div>
     </header>
-
     <section>
 
 
-      <h3 style="margin-right: 5px; text-align: center; line-height: 1; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver"><button onclick="RandomizeFunction1()">Randomize</button><br>
-
+      <div style="position: absolute; left: 1%; bottom: 6%; right: 85%; line-height: 1"><button onclick="RandomizeFunction1()">Randomize</button><br></div>
+<div style="position: absolute; left: 1%; top: 6%; right: 85%; line-height: 0.6; font-size: 20px; padding-top: 10px">
       <label>Weapon Types</label><br>
 
       <p>Your Weapon type Is:</p>
-    <b><p id="randomWeapon"></p></b>
+    <p id="randomWeapon"></p>
 
 
         <section>
@@ -32,10 +30,10 @@
           <label>Attunements</label><br>
 
           <p>Your Attunement Is:</p>
-        <b><p id="randomAttunement"></p></h3></b>
+        <p id="randomAttunement"></p></div>
 
 
-<p><h2 style="margin-right: 5px; text-align: center; line-height: 1.8; font-weight: 300; border-width: 5px; border-style: solid; border-color: silver">
+<p><div style="position: absolute; left: 1%; top: 30%; bottom: 12%; right: 85%; font-size: 25px; line-height: 2.1">
 <label>Attribute Points</label></p>
           <p1>Strength:</p1>
           <p1 id="randomStrength"></p1><br>
@@ -55,7 +53,7 @@
           <p8 id="randomWeaponStat"></p8><br>
           <p9>Points Spent:</p9>
           <p9 id="randomLeftover"></p9>
-</h2>
+</div>
 
       <script>
       const myWeaponList = ["Dagger", "Rapier", "Fists", "Guns", "Greatsword", "Greataxe", "Greathammer", "Sword", "Club", "Spear"];
@@ -64,228 +62,494 @@
 
       function RandomizeFunction1() {
         document.getElementById("randomWeapon").innerHTML = myWeaponList[Math.floor(Math.random() * myWeaponList.length)]
-        var global = Math.random() * 60;
 
-        if (global<10, global>0) {
+        min = Math.ceil(6);
+        max = Math.floor(1);
+        var strength = Math.floor(Math.random() * (4-1) + 1);
+        var fortitude = Math.floor(Math.random() * (4-1) + 1);
+        var agility = Math.floor(Math.random() * (4-1) + 1);
+        var intelligence = Math.floor(Math.random() * (4-1) + 1);
+        var willpower = Math.floor(Math.random() * (4-1) + 1);
+        var charisma = Math.floor(Math.random() * (4-1) + 1);
+        var weapon = Math.floor(Math.random() * (4-1) + 1);
+
+
+
+
+
+  min = Math.ceil(6);
+  max = Math.floor(1);
+        var element = Math.floor(Math.random() * (6-1) + 1);
+
+        if (element==1) {
            y = "Galebreathe"
         }
-        if (global<20, global>10) {
+        if (element==2) {
           y = "Flamecharm"
         }
-        if (global<30, global>20) {
+        if (element==3) {
           y = "Thundercall"
         }
-        if (global<40, global>30) {
+        if (element==4) {
           y = "Frostdraw"
         }
-        if (global<50, global>40) {
+        if (element==5) {
           y = "Shadowcast"
         }
-        if (global<60, global>50) {
+        if (element==6) {
           y = "Attunementless"
         }
         document.getElementById("randomAttunement").innerHTML = y;
 
-        if (global<10, global>0) {
-           f = 30
+        if (element==1) {
+        if (strength==1) {
+            f = 25
+          }
+          if (strength==2) {
+            f = 30
+          }
+          if (strength==3) {
+            f = 40
+          }
         }
-        if (global<20, global>10) {
-          f = 40
+
+        if (element==2 ) {
+        if (strength==1) {
+            f = 30
+          }
+          if (strength==2) {
+            f = 40
+          }
+          if (strength==3) {
+            f = 40
+          }
         }
-        if (global<30, global>20) {
-          f = 25
+
+        if (element==3 ) {
+        if (strength==1) {
+            f = 0
+          }
+          if (strength==2) {
+            f = 25
+          }
+          if (strength==3) {
+            f = 40
+          }
         }
-        if (global<40, global>30) {
-          f = 25
+
+        if (element==4) {
+        if (strength==1) {
+            f = 0
+          }
+          if (strength==2) {
+            f = 25
+          }
+          if (strength==3) {
+            f = 40
+          }
         }
-        if (global<50, global>40) {
-          f = 25
+        if (element==5) {
+        if (strength==1) {
+            f = 0
+          }
+          if (strength==2) {
+            f = 25
+          }
+          if (strength==3) {
+            f = 40
+          }
         }
-        if (global<55, global>50) {
-          f = 60
+        if (element==6) {
+        if (strength==1) {
+            f = 40
+          }
+          if (strength==2) {
+            f = 60
+          }
+          if (strength==3) {
+            f = 80
+          }
         }
-        if (global<60, global>55) {
-          f = 90
-        }
+
 
       document.getElementById("randomStrength").innerHTML = f;
 
-      if (global<5, global>0) {
-         g = 50
-       }
-       if (global<10, global>5) {
+      if (element==1) {
+      if (fortitude==1) {
           g = 40
         }
-      if (global<20, global>10) {
-        g = 40
+        if (fortitude==2) {
+          g = 50
+        }
+        if (fortitude==3) {
+          g = 60
+        }
       }
-      if (global<30, global>20) {
-        g = 50
+
+      if (element==2) {
+      if (fortitude==1) {
+          g = 40
+        }
+        if (fortitude==2) {
+          g = 90
+        }
+        if (fortitude==3) {
+          g = 50
+        }
       }
-      if (global<40, global>30) {
-        g = 50
+
+      if (element==3) {
+      if (fortitude==1) {
+          g = 40
+        }
+        if (fortitude==2) {
+          g = 50
+        }
+        if (fortitude==3) {
+          g = 60
+        }
       }
-      if (global<50, global>40) {
-        g = 40
+
+      if (element==4) {
+      if (fortitude==1) {
+          g = 40
+        }
+        if (fortitude==2) {
+          g = 50
+        }
+        if (fortitude==3) {
+          g = 90
+        }g
       }
-      if (global<55, global>50) {
-        g = 90
+      if (element==5) {
+      if (fortitude==1) {
+          g = 40
+        }
+        if (fortitude==2) {
+          g = 50
+        }
+        if (fortitude==3) {
+          g = 60
+        }
       }
-      if (global<60, global>55) {
-        g = 60
+      if (element==6) {
+      if (fortitude==1) {
+          g = 40
+        }
+        if (fortitude==2) {
+          g = 60
+        }
+        if (fortitude==3) {
+          g = 90
+        }
       }
 
     document.getElementById("randomFortitude").innerHTML = g;
 
-    if (global<5, global>0) {
-       m = 30
-     }
-     if (global<10, global>5) {
+    if (element==1) {
+    if (agility==1) {
+        m = 30
+      }
+      if (agility==2) {
         m = 25
       }
-    if (global<20, global>10) {
-      m = 25
+      if (agility==3) {
+        m = 40
+      }
     }
-    if (global<30, global>20) {
-      m = 30
+
+    if (element==2) {
+    if (agility==1) {
+        m = 25
+      }
+      if (agility==2) {
+        m = 40
+      }
+      if (agility==3) {
+        m = 0
+      }
     }
-    if (global<40, global>30) {
-      m = 25
+
+    if (element==3) {
+    if (agility==1) {
+        m = 40
+      }
+      if (agility==2) {
+        m = 25
+      }
+      if (agility==3) {
+        m = 30
+      }
     }
-    if (global<50, global>40) {
-      m = 0
+
+    if (element==4) {
+    if (agility==1) {
+        m = 25
+      }
+      if (agility==2) {
+        m = 25
+      }
+      if (agility==3) {
+        m = 25
+      }
     }
-    if (global<55, global>50) {
-      m = 25
+    if (element==5) {
+    if (agility==1) {
+        m = 0
+      }
+      if (agility==2) {
+        m = 25
+      }
+      if (agility==3) {
+        m = 0
+      }
     }
-    if (global<60, global>55) {
-      m = 65
+    if (element==6) {
+    if (agility==1) {
+        m = 0
+      }
+      if (agility==2) {
+        m = 25
+      }
+      if (agility==3) {
+        m = 65
+      }
     }
 
   document.getElementById("randomAgility").innerHTML = m;
-  if (global<5, global>0) {
-     k = 0
+  if (element==1) {
+  if (intelligence==1) {
+      k = 0
+    }
+    if (intelligence==2) {
+      k = 20
+    }
+    if (intelligence==3) {
+      k = 10
+    }
   }
-  if (global<10, global>5) {
-     k = 20
+
+  if (element==2) {
+  if (intelligence==1) {
+      k = 0
+    }
+    if (intelligence==2) {
+      k = 5
+    }
+    if (intelligence==3) {
+      k = 10
+    }
   }
-  if (global<15, global>10) {
-    k = 0
+
+  if (element==3) {
+  if (intelligence==1) {
+      k = 15
+    }
+    if (intelligence==2) {
+      k = 20
+    }
+    if (intelligence==3) {
+      k = 25
+    }
   }
-  if (global<20, global>15) {
-    k = 5
+
+  if (element==4) {
+  if (intelligence==1) {
+      k = 5
+    }
+    if (intelligence==2) {
+      k = 20
+    }
+    if (intelligence==3) {
+      k = 40
+    }
   }
-  if (global<25, global>20) {
-    k = 20
+  if (element==5) {
+  if (intelligence==1) {
+      k = 0
+    }
+    if (intelligence==2) {
+      k = 5
+    }
+    if (intelligence==3) {
+      k = 20
+    }
   }
-  if (global<30, global>25) {
-    k = 15
-  }
-  if (global<33, global>30) {
-    k = 5
-  }
-  if (global<36, global>33) {
-    k = 40
-  }
-  if (global<40, global>36) {
-    k = 20
-  }
-  if (global<50, global>40) {
-    k = 20
-  }
-  if (global<53, global>50) {
-    k = 0;
-  }
-  if (global<56, global>53) {
-    k = 5;
-  }
-  if (global<60, global>56) {
-    k = 80;
+  if (element==6) {
+  if (intelligence==1) {
+      k = 0
+    }
+    if (intelligence==2) {
+      k = 5
+    }
+    if (intelligence==3) {
+      k = 80
+    }
   }
 
 document.getElementById("randomIntelligence").innerHTML = k;
 
-  if (global<10, global>0) {
-     b = 20        }
-  if (global<20, global>10) {
-    b = 40
-  }
-  if (global<30, global>20) {
+if (element==1) {
+if (willpower==1) {
     b = 0
   }
-  if (global<40, global>30) {
-    b = 0
-  }
-  if (global<50, global>40) {
+  if (willpower==2) {
     b = 20
   }
-  if (global<60, global>50) {
-    b = 50;
+  if (willpower==3) {
+    b = 40
   }
+}
+
+if (element==2) {
+if (willpower==1) {
+    b = 0
+  }
+  if (willpower==2) {
+    b = 40
+  }
+  if (willpower==3) {
+    b = 50
+  }
+}
+
+if (element==3) {
+if (willpower==1) {
+    b = 0
+  }
+  if (willpower==2) {
+    b = 10
+  }
+  if (willpower==3) {
+    b = 20
+  }
+}
+
+if (element==4) {
+if (willpower==1) {
+    b = 0
+  }
+  if (willpower==2) {
+    b = 20
+  }
+  if (willpower==3) {
+    b = 40
+  }
+}
+if (element==5) {
+if (willpower==1) {
+    b = 0
+  }
+  if (willpower==2) {
+    b = 25
+  }
+  if (willpower==3) {
+    b = 40
+  }
+}
+if (element==6) {
+if (willpower==1) {
+    b = 0
+  }
+  if (willpower==2) {
+    b = 20
+  }
+  if (willpower==3) {
+    b = 50
+  }
+}
 
 document.getElementById("randomWillpower").innerHTML = b;
 
-  if (global<5, global>0) {
-     j = 25
-  }
-  if (global<10, global>5) {
-     j = 0
-  }
-  if (global<15, global>10) {
+if (element==1) {
+if (charisma==1) {
     j = 0
   }
-  if (global<20, global>15) {
-    j = 25
-  }
-  if (global<30, global>20) {
+  if (charisma==2) {
     j = 0
   }
-  if (global<35, global>30) {
+  if (charisma==3) {
+    j = 25
+  }
+}
+
+if (element==2) {
+if (charisma==1) {
     j = 0
   }
-  if (global<40, global>35) {
+  if (charisma==2) {
+    j = 0
+  }
+  if (charisma==3) {
     j = 25
   }
-  if (global<45, global>40) {
+}
+
+if (element==3) {
+if (charisma==1) {
+    j = 0
+  }
+  if (charisma==2) {
+    j = 0
+  }
+  if (charisma==3) {
     j = 25
   }
-  if (global<50, global>45) {
+}
+
+if (element==4) {
+if (charisma==1) {
+    j = 0
+  }
+  if (charisma==2) {
+    j = 25
+  }
+  if (charisma==3) {
     j = 50
   }
-  if (global<55, global>50) {
-    j = 25;
+}
+if (element==5) {
+if (charisma==1) {
+    j = 0
   }
-  if (global<60, global>55) {
-    j = 0;
+  if (charisma==2) {
+    j = 25
   }
+  if (charisma==3) {
+    j = 50
+  }
+}
+if (element==6) {
+if (charisma==1) {
+    j = 0
+  }
+  if (charisma==2) {
+    j = 25
+  }
+  if (charisma==3) {
+    j = 50
+  }
+}
+
 
 document.getElementById("randomCharisma").innerHTML = j;
 
-  if (global<15, global>0) {
-     c = 60
+if (weapon==1) {
+    c = 80
   }
-  if (global<30, global>15) {
-     c = 80
-  }
-  if (global<45, global>30) {
+  if (weapon==2) {
     c = 90
   }
-  if (global<60, global>45) {
+  if (weapon==3) {
     c = 100
   }
+}
+
 
 
 document.getElementById("randomWeaponStat").innerHTML = c;
 
-if (global<30, global>0) {
-   l = 60
-}
-if (global<50, global>30) {
-  l = 80
-}
-if (global<60, global>50) {
-  l = 0
-}
+l = 80
 
 document.getElementById("randomAttunementStat").innerHTML = l;
 
@@ -340,11 +604,25 @@ document.getElementById("randomAttunementStat").innerHTML = arr[7];
 }
 
 document.getElementById("randomLeftover").innerHTML = total
-}
+
       </script>
     </section>
 
-  </section>
+<div style="text-align: left; position: absolute; bottom: 1%; left: 1%; right: 1%">
+Developed by  Phantom#1349
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
 
 </html>
